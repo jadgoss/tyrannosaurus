@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Tyrannosaurus.Models.Observation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Observee.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Succinylacetone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tyrosine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phenylalanine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observee.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObservationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Succinylacetone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tyrosine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phenylalanine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ObservationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ObservationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ObservationId })
+        </td>
+    </tr>
+}
+
+</table>

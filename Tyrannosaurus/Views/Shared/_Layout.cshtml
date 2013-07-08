@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Tyrannosaurus</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/kendo/2012.3.1315/css")
+@*        @Scripts.Render("~/bundles/modernizr")*@
+@*        @Scripts.Render("~/bundles/jquery")*@
+        @* The bundle for Kendo is not working for some reason, so just include the scripts directly here
+                @Scripts.Render("~/bundles/kendo")*@
+
+        <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/kendo/2012.3.1315/kendo.dataviz.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/kendo/2012.3.1315/kendo.grid.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/kendo/2012.3.1315/kendo.aspnetmvc.min.js")"></script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink(" ", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @*@Html.Partial("_LoginPartial")*@
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Tyrannosaurus</p>
+                </div>
+            </div>
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

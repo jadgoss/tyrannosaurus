@@ -1,0 +1,71 @@
+﻿@model Tyrannosaurus.Models.Observation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Observation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Observee.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Observee.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ObservationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ObservationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Succinylacetone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Succinylacetone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tyrosine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tyrosine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phenylalanine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phenylalanine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ObservationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

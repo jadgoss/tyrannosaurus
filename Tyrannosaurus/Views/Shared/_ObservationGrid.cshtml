@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Tyrannosaurus.UI.Models.ObservationsList>
+
+<div id="kendogrid" class="k-content">
+    @(Html.Kendo().Grid(Model)
+          .Name("Grid")
+          .Columns(columns =>
+              {
+                  columns.Bound(o => o.ObserveeName).Width(70);
+                  columns.Bound(o => o.ObservationDate).Width(70).Format("{0:dd/MM/yyyy}");
+                  columns.Bound(o => o.Succinylacetone).Width(70);
+                  columns.Bound(o => o.Tyrosine).Width(70);
+                  columns.Bound(o => o.Phenylalanine).Width(70);
+                  columns.Bound(o => o.Height).Width(70);
+                  columns.Bound(o => o.Weight).Width(70);
+                  columns.Bound(o => o.Comment).Width(70);
+              })     
+          .DataSource(dataSource => dataSource        
+                                        .Ajax()
+                                        .ServerOperation(false)        
+          )
+          )
+</div>
+
+@*<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ObserveeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObservationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Succinylacetone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tyrosine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phenylalanine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObserveeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObservationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Succinylacetone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tyrosine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phenylalanine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ObservationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ObservationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ObservationId })
+        </td>
+    </tr>
+}
+
+</table>*@

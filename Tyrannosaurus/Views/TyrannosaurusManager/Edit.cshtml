@@ -1,0 +1,93 @@
+﻿@model Tyrannosaurus.Models.Observation
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Observation</legend>
+
+        @Html.HiddenFor(model => model.ObservationId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ObserveeId, "Observee")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ObserveeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ObserveeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ObservationDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ObservationDate)
+            @Html.ValidationMessageFor(model => model.ObservationDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Succinylacetone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Succinylacetone)
+            @Html.ValidationMessageFor(model => model.Succinylacetone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tyrosine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tyrosine)
+            @Html.ValidationMessageFor(model => model.Tyrosine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phenylalanine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phenylalanine)
+            @Html.ValidationMessageFor(model => model.Phenylalanine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Height)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Height)
+            @Html.ValidationMessageFor(model => model.Height)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Weight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Weight)
+            @Html.ValidationMessageFor(model => model.Weight)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comment)
+            @Html.ValidationMessageFor(model => model.Comment)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

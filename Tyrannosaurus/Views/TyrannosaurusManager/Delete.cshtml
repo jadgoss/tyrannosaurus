@@ -1,0 +1,74 @@
+﻿@model Tyrannosaurus.Models.Observation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Observation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Observee.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Observee.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ObservationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ObservationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Succinylacetone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Succinylacetone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tyrosine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tyrosine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phenylalanine)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phenylalanine)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Height)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Height)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Weight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Comment)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comment)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

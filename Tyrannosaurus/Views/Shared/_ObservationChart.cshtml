@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Tyrannosaurus.UI.Models.ObservationsList>
+
+@*TODO: Format Category labels  *@
+
+<div id="tyrosine-chart" class="chart-wrapper">
+    @(Html.Kendo().Chart(Model.Where(a => a.Tyrosine.HasValue))
+          .Name("chart-Tyrosine")
+          .Title("Tyrosine")
+          .Legend(legend => legend
+                                .Position(ChartLegendPosition.Bottom)
+          )
+          .Series(series =>
+          {
+              series.Line(model => model.Tyrosine)
+                    .Name("Tyrosine")
+                    .Labels(labels => labels.Format("{0}").Visible(true));
+          })
+          .CategoryAxis(axis => axis
+                                    .Categories(model => model
+                                                             .ObservationDate).Labels(false)
+          )
+
+          .ValueAxis(axis => axis.Numeric()
+                                 .Labels(labels => labels.Format("{0}"))
+          ))
+</div>
+<div class="chart-wrapper">
+    @(Html.Kendo().Chart(Model.Where(a => a.Phenylalanine.HasValue))
+          .Name("chart-Phenylalanine")
+          .Title("Phenylalanine")
+          .Legend(legend => legend
+                                .Position(ChartLegendPosition.Bottom)
+          )
+          .Series(series =>
+          {
+              series.Line(model => model.Phenylalanine)
+                    .Name("Phenylalanine")
+                    .Labels(labels => labels.Format("{0}").Visible(true));
+          })
+          .CategoryAxis(axis => axis
+                                    .Categories(model => model
+                                                             .ObservationDate).Labels(false)
+          )
+
+          .ValueAxis(axis => axis.Numeric()
+                                 .Labels(labels => labels.Format("{0}"))
+          ))
+</div>
+<div class="chart-wrapper">
+    @(Html.Kendo().Chart(Model.Where(a => a.Succinylacetone.HasValue))
+          .Name("chart-Succinylacetone")
+          .Title("Succinylacetone")
+          .Legend(legend => legend
+                                .Position(ChartLegendPosition.Bottom)
+          )
+          .Series(series =>
+          {
+              series.Line(model => model.Succinylacetone)
+                    .Name("Succinylacetone")
+                    .Labels(labels => labels.Format("{0}").Visible(true));
+          })
+          .CategoryAxis(axis => axis
+                                    .Categories(model => model
+                                                             .ObservationDate).Labels(false)
+          )
+
+          .ValueAxis(axis => axis.Numeric()
+                                 .Labels(labels => labels.Format("{0}"))
+          ))
+</div>
+<div class="chart-wrapper">
+    @(Html.Kendo().Chart(Model.Where(a => a.Height.HasValue))
+          .Name("chart-Height")
+          .Title("Height")
+          .Legend(legend => legend
+                                .Position(ChartLegendPosition.Bottom)
+          )
+          .Series(series =>
+          {
+              series.Line(model => model.Height)
+                    .Name("Height")
+                    .Labels(labels => labels.Format("{0}").Visible(true));
+          })
+          .CategoryAxis(axis => axis
+                                    .Categories(model => model
+                                                             .ObservationDate).Labels(false)
+          )
+
+          .ValueAxis(axis => axis.Numeric()
+                                 .Labels(labels => labels.Format("{0}"))
+          ))
+</div>
+<div class="chart-wrapper">
+    @(Html.Kendo().Chart(Model.Where(a => a.Weight.HasValue))
+          .Name("chart-Weight")
+          .Title("Weight")
+          .Legend(legend => legend
+                                .Position(ChartLegendPosition.Bottom)
+          )
+          .Series(series =>
+          {
+              series.Line(model => model.Weight)
+                    .Name("Weight")
+                    .Labels(labels => labels.Format("{0}").Visible(true));
+          })
+          .CategoryAxis(axis => axis
+                                    .Categories(model => model
+                                                             .ObservationDate).Labels(false)
+          )
+
+          .ValueAxis(axis => axis.Numeric()
+                                 .Labels(labels => labels.Format("{0}"))
+          ))
+</div>

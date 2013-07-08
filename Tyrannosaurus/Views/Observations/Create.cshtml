@@ -1,0 +1,81 @@
+﻿@model Tyrannosaurus.UI.Models.ObservationFormViewModel
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    New Observation</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ObservationFormViewModel</legend>
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Observee)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Observation.ObserveeId, Model.Observees)
+            @Html.ValidationMessageFor(model => model.Observation.Observee)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.ObservationDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.ObservationDate)
+            @Html.ValidationMessageFor(model => model.Observation.ObservationDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Succinylacetone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Succinylacetone)
+            @Html.ValidationMessageFor(model => model.Observation.Succinylacetone)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Tyrosine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Tyrosine)
+            @Html.ValidationMessageFor(model => model.Observation.Tyrosine)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Phenylalanine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Phenylalanine)
+            @Html.ValidationMessageFor(model => model.Observation.Phenylalanine)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Height)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Height)
+            @Html.ValidationMessageFor(model => model.Observation.Height)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Weight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Weight)
+            @Html.ValidationMessageFor(model => model.Observation.Weight)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation.Comment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Observation.Comment)
+            @Html.ValidationMessageFor(model => model.Observation.Comment)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

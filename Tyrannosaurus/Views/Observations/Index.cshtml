@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Observations";
+}
+
+<h2>Observations</h2>
+
+<div style="float: left; padding-bottom: 10px">
+    @Html.ActionLink("New Observation", "Create")
+</div>
+
+<div style="padding-bottom:10px">
+    <div id="charts-link" style="float: right; display: none">
+        @Ajax.ActionLink("Charts",
+                         "GetObservations",
+                         new { mode = "charts" },
+                         new AjaxOptions
+                             {
+                                 UpdateTargetId = "observations",
+                                 InsertionMode = InsertionMode.Replace,
+                                 HttpMethod = "GET"
+                             })
+    </div>
+
+    <div id="grid-link" style="float: right">
+        @Ajax.ActionLink("Grid",
+                         "GetObservations",
+                         new { mode = "grid" },
+                         new AjaxOptions
+                             {
+                                 UpdateTargetId = "observations",
+                                 InsertionMode = InsertionMode.Replace,
+                                 HttpMethod = "GET"
+                             })
+    </div>
+</div>
+
+<div id="observations" style="clear:both; padding-bottom: 10px">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    $(function () {
+        $('#observations').load('/Observations/GetObservations/mode=charts');
+    });
+
+    function toggleLinks() {
+        $('#grid-link').toggle();
+        $('#charts-link').toggle();
+    }
+    
+    $('#grid-link').click(toggleLinks);
+    $('#charts-link').click(toggleLinks);
+
+//]]>
+</script>
+

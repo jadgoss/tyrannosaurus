@@ -1,0 +1,60 @@
+﻿@model Tyrannosaurus.Core.Domain.Observation
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Details</h2>
+<fieldset>
+    <legend>Observation</legend>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Observee.Name) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Observee.Name)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.ObservationDate) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.ObservationDate)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Succinylacetone) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Succinylacetone)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Tyrosine) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Tyrosine)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Phenylalanine) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Phenylalanine)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Height) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Height)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Weight) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Weight)
+            </span>
+    </div>
+    <div>
+        <span class="display-label">
+            @Html.DisplayNameFor(model => model.Comment) : </span><span class="display-field">
+                @Html.DisplayFor(model => model.Comment)
+            </span>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ObservationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Tyrannosaurus";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <p><h2>@ViewBag.Message</h2></p>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Get started:</h3>
+<ul>
+    <li>@Html.ActionLink("View past observations","Index","Observations")</li>
+    <li>@Html.ActionLink("Add a new observation","Create","Observations")</li>
+</ul>
+
